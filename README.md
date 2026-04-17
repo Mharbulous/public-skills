@@ -6,11 +6,11 @@ A collection of Claude Code skills worth sharing.
 
 ### `/determinize`
 
-Hardens existing skills by extracting deterministic procedures into helper scripts. Uses a TDD-based workflow (harden → test → promote) to replace LLM variance with scripts that produce identical output for identical input.
+Determinize existing skills looks for parts of skills that could be better handled by conventional deterministic algorithims rather than LLM inference. Uses a TDD-based workflow (harden → test → promote) to replace LLM stochastic skil protocols with deterministic scripts that produce identical output more consistently and without burning tokens.
 
 Three modes:
-- **harden** — inventory a skill, classify sections by determinism, extract procedures into scripts, verify no behavior change
-- **test** — A/B test two skill variants with controlled trials and significance analysis
+- **harden** — inventory a skill, classify sections by determinism heuristics, extract procedures into scripts, verify no behavior change
+- **test** — A/B test original stoachastic skill against determinized version of skill with controlled trials and significance analysis
 - **promote** — replace the original skill with the hardened version after testing confirms improvement
 
 ### `/elucidate`
@@ -23,22 +23,8 @@ Two modes:
 
 ## Installation
 
-Copy each skill into your `.claude/skills/` folder:
+Copy each skill into your `.claude/skills/` folder
 
-```bash
-cp -r determinize ~/.claude/skills/determinize
-cp -r .claude/skills/elucidate ~/.claude/skills/elucidate
-```
+## License
 
-Then register the skill in your `.claude/settings.json` (or globally in `~/.claude/settings.json`):
-
-```json
-{
-  "skills": [
-    "determinize",
-    "elucidate"
-  ]
-}
-```
-
-Invoke with `/determinize` or `/elucidate` in Claude Code.
+MIT — see [LICENSE](LICENSE). Use, fork, modify, and redistribute freely.
