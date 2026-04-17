@@ -15,17 +15,19 @@ Three modes:
 
 ### `/elucidate`
 
-Tests whether a data element name is self-documenting by running a blind multi-agent prediction protocol: agents predict what a name represents from the lineage table alone, and their predictions are scored against ground truth. If an alternative name scores higher, it gets renamed across the codebase.
+Tests whether a symbol name (variable, function, field, class) is self-documenting by running a blind multi-agent prediction protocol: agents predict what the symbol represents from the name plus minimal local context, then their predictions are scored against ground truth from a full codebase exploration. If a proposed alternative name scores higher, it gets renamed across the codebase.
 
-Designed for a Vue 3/Firebase project with a data lineage table. The protocol is general-purpose but the prompts are tuned for that context — adapt `prompts.md` for your own domain.
+Two modes:
+- `/elucidate <symbol>` — run the protocol on a specific symbol.
+- `/elucidate` — auto-discover a high-impact, ambiguously-named symbol in the current repo.
 
 ## Installation
 
-Copy the skill directory into your `.claude/skills/` folder:
+Copy each skill into your `.claude/skills/` folder:
 
 ```bash
 cp -r determinize ~/.claude/skills/determinize
-cp -r elucidate ~/.claude/skills/elucidate
+cp -r .claude/skills/elucidate ~/.claude/skills/elucidate
 ```
 
 Then register the skill in your `.claude/settings.json` (or globally in `~/.claude/settings.json`):
