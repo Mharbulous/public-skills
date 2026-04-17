@@ -433,14 +433,14 @@ End a `/elucidate` run for a single symbol with:
 **Ground truth:** {one-sentence definition}
 **References:** {N}
 
-### Original Name Scores
+### Scores for `{name}` (original)
 | Agent | Context           | Score |
 |-------|-------------------|-------|
 | 2     | declaration only  | {score} |
 | 3     | + file outline    | {score} |
 |       | Min/Avg/Max       | {min}/{avg}/{max} |
 
-### Alternative Name: `{altName}`
+### Scores for `{altName}` (proposed)
 | Agent | Context           | Score |
 |-------|-------------------|-------|
 | 5     | declaration only  | {score} |
@@ -448,13 +448,13 @@ End a `/elucidate` run for a single symbol with:
 |       | Min/Avg/Max       | {min}/{avg}/{max} |
 
 ### Comparison
-| Metric  | Original | Alternative | Winner |
-|---------|----------|-------------|--------|
-| Minimum | {x}      | {y}         | {w}    |
-| Average | {x}      | {y}         | {w}    |
-| Maximum | {x}      | {y}         | {w}    |
+| Metric  | `{name}` (original) | `{altName}` (proposed) | Winner |
+|---------|---------------------|------------------------|--------|
+| Minimum | {x}                 | {y}                    | `{winnerName}` ({original|proposed}) |
+| Average | {x}                 | {y}                    | `{winnerName}` ({original|proposed}) |
+| Maximum | {x}                 | {y}                    | `{winnerName}` ({original|proposed}) |
 
-**Result:** {Original/Alternative} wins {2-1 / 3-0}.
+**Result:** `{winnerName}` ({original|proposed}) wins {2-1 / 3-0}.
 **Action:** {kept original | renamed to `newName` across N files}
 {Lint: pass/fail | Tests: pass/fail | (skipped — no commands configured)}
 ```
@@ -480,8 +480,8 @@ single-symbol template (one per batch entry, including `not_found` and
 
 | Tag | Symbol | Result | Action |
 |-----|--------|--------|--------|
-| S1  | `foo`  | Alt 3-0 | renamed to `altFoo` |
-| S2  | `bar`  | Orig 2-1 | kept |
+| S1  | `foo`  | `altFoo` (proposed) wins 3-0 | renamed to `altFoo` |
+| S2  | `bar`  | `bar` (original) wins 2-1 | kept |
 | S3  | `baz`  | rename_blocked | kept (all 3 retries collided) |
 | ... |
 

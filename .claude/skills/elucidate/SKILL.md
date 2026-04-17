@@ -213,8 +213,8 @@ Line prefix `[Si]` = per-symbol detail within a batch. Omit the prefix when K=1.
 | 2–3 | "2 blind predictions on original names collected ({K}×2 predictions)." |
 | 4 | "Proposed alternatives: [S1] `alt1`, [S2] `alt2`, …  {C} collision retries via Agent 4R." |
 | 5–5b | "2 blind predictions on alternative names collected." |
-| 6 | "Judged. [Si] Original {min}/{avg}/{max}, Alt {min}/{avg}/{max}." |
-| 7 | "Per-symbol results: [S1] **alt wins** (3-0), [S2] original wins (2-1), …" |
+| 6 | "Judged. [Si] `{name}` (original) {min}/{avg}/{max}, `{altName}` (proposed) {min}/{avg}/{max}." |
+| 7 | "Per-symbol results: [S1] **`{altName}` (proposed) wins** (3-0), [S2] `{name}` (original) wins (2-1), …" |
 | Rename | "Renaming {M} winners sequentially. [S1] Renamed `{old}` → `{new}` in {F} files. Lint: {pass/fail}. Tests: {pass/fail}." |
 
 ## Final Output
