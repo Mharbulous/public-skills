@@ -17,7 +17,7 @@ description: >
 
 Test whether a symbol name is self-documenting by comparing **blind predictions** (agents that only see the name plus minimal local context) against **ground truth** (full codebase exploration). If a proposed alternative name produces better blind predictions, rename it across the codebase.
 
-**Core insight:** A name is self-documenting when an agent can accurately predict what it represents from the name alone, without reading the codebase.
+**Core insight:** A name is self-documenting when agents can accurately predict what it represents from the name alone, without reading the codebase.
 
 ## Invocation Modes
 
